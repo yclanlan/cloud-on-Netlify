@@ -7,8 +7,7 @@ export class cloud{
     constructor(x, y, z, scene, look, id){
 
 	for (let i = 0; i < 1; i++) {
-    let cloudGeo = new THREE.PlaneGeometry(Math.random() * 400 + 500, 
-										   Math.random() * 200 + 300);
+        let cloudGeo = new THREE.PlaneGeometry(Math.random() * 400 + 500, Math.random() * 200 + 300);
 	let cloudTexture = new THREE.TextureLoader().load("/hugeCloud.png");
 
 	// cloudTexture.magFilter = THREE.LinearFilter;
@@ -27,7 +26,6 @@ export class cloud{
 		// let mesh = new THREE.Mesh(cloudGeo, cloudMaterial);
 
 		this.cloudMesh = new THREE.Mesh(cloudGeo, cloudMaterial);
-		
 		this.cloudMesh.position.set(
             // x,y,z
             (Math.random()-0.5) * 200 + x,
@@ -37,9 +35,9 @@ export class cloud{
         // this.cloudMesh.rotateZ( Math.random() * 4);
 		
 	
-		this.cloudMesh.up.set(0, 1, 0);
+	this.cloudMesh.up.set(0, 1, 0);
         this.frameCount = 0;
-		scene.add(this.cloudMesh);
+	scene.add(this.cloudMesh);
 
 		}
 		
@@ -53,10 +51,10 @@ export class cloud{
 
     update() {
 
-            this.frameCount++;
-            // this.cloudMesh.rotateZ(100);
-			this.cloudMesh.lookAt(look);	
-			this.cloudMesh.position+=i;	
+	    this.frameCount++;
+	    // this.cloudMesh.rotateZ(100);
+            this.cloudMesh.lookAt(look);	
+	    this.cloudMesh.position+=i;	
 			
             }
 
